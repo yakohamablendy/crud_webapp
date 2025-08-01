@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Inventario</h1>
+        <nav>
+            <button id="btn-agregar" class="btn-primary">Agregar Producto</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="producto-form" class="form-section hidden">
+            <h2>Agregar Nuevo Producto</h2>
+            <form id="form-producto">
+                <div class="form-group">
+                    <label for="nombre">Nombre del Producto:</label>
+                    <input type="text" id="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" required>
+                        <option value="">Seleccionar categoría</option>
+                        <option value="electronica">Electrónica</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="hogar">Hogar</option>
+                        <option value="deportes">Deportes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" min="0" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn-primary">Guardar</button>
+                    <button type="button" id="btn-cancelar" class="btn-secondary">Cancelar</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="lista-productos" class="productos-section">
+            <h2>Lista de Productos</h2>
+            <div id="productos-container">
+                <!-- Los productos se mostrarán aquí -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/inventory.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
