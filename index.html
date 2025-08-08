@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Inventario CRUD - Con Filtros</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1> Sistema de Inventario</h1>
+            <p>Gestiona tu inventario de manera fácil y eficiente</p>
+        </div>
+
+        <div id="message" class="message"></div>
+
+        <div class="main-content">
+            <!-- FORMULARIO MEJORADO -->
+            <div class="form-section">
+                <h2>Agregar Nuevo Producto</h2>
+                <form id="productForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productCode">Código del Producto <span class="required">*</span></label>
+                            <input type="text" id="productCode" name="productCode" placeholder="Ej: PRD001" maxlength="20">
+                            <div class="help-text">Código único del producto</div>
+                            <div class="error-message" id="productCodeError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="productName">Nombre del Producto <span class="required">*</span></label>
+                            <input type="text" id="productName" name="productName" placeholder="Ej: Laptop Dell" maxlength="100">
+                            <div class="error-message" id="productNameError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productCategory">Categoría <span class="required">*</span></label>
+                            <select id="productCategory" name="productCategory">
+                                <option value="">Seleccionar categoría</option>
+                                <option value="electronica">Electrónica</option>
+                                <option value="ropa">Ropa</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="oficina">Oficina</option>
+                                <option value="deportes">Deportes</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                            <div class="error-message" id="productCategoryError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="productSupplier">Proveedor</label>
+                            <input type="text" id="productSupplier" name="productSupplier" placeholder="Ej: TechStore RD" maxlength="100">
+                            <div class="help-text">Opcional</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="productPrice">Precio (RD$) <span class="required">*</span></label>
+                            <input type="number" id="productPrice" name="productPrice" placeholder="0.00" min="0" step="0.01">
+                            <div class="error-message" id="productPriceError"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="productQuantity">Cantidad <span class="required">*</span></label>
+                            <input type="number" id="productQuantity" name="productQuantity" placeholder="0" min="0">
+                            <div class="error-message" id="productQuantityError"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label for="productDescription">Descripción</label>
+                        <textarea id="productDescription" name="productDescription" rows="3" placeholder="Descripción opcional del producto" maxlength="500"></textarea>
+                        <div class="help-text">Máximo 500 caracteres</div>
+                    </div>
+
+                    <div style="display: flex; gap: 15px; margin-top: 25px;">
+                        <button type="submit" class="btn">
+                            Agregar Producto
+                        </button>
+                        <button type="button" class="btn btn-secondary" onclick="clearForm()">
+                            Limpiar
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- LISTA DE PRODUCTOS CON FILTROS -->
+            <div class="products-section">
+                <!-- HEADER CON CONTADOR -->
+                <div class="products-header">
+                    <h2>Lista de Productos</h2>
+                    <div class="products-counter">
+                        <span id="productsCount">0 productos encontrados</span>
+                    </div>
+                </div>
+
+                <!-- CONTROLES DE BÚSQUEDA Y FILTROS -->
+                <div class="search-filters-section">
+                    <div class="search-bar">
+                        <input type="text" id="searchInput" placeholder="🔍 Buscar por nombre o código..." maxlength="100">
+                    </div>
+
+                    <div class="filters-row">
+                        <div class="filter-group">
+                            <label for="categoryFilter">Categoría:</label>
+                            <select id="categoryFilter">
+                                <option value="">Todas las categorías</option>
+                                <option value="electronica">Electrónica</option>
+                                <option value="ropa">Ropa</option>
+                                <option value="hogar">Hogar</option>
+                                <option value="oficina">Oficina</option>
+                                <option value="deportes">Deportes</option>
+                                <option value="otros">Otros</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="supplierFilter">Proveedor:</label>
+                            <select id="supplierFilter">
+                                <option value="">Todos los proveedores</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="sortFilter">Ordenar por:</label>
+                            <select id="sortFilter">
+                                <option value="name-asc">Nombre (A-Z)</option>
+                                <option value="name-desc">Nombre (Z-A)</option>
+                                <option value="price-asc">Precio (Menor a Mayor)</option>
+                                <option value="price-desc">Precio (Mayor a Menor)</option>
+                                <option value="quantity-asc">Cantidad (Menor a Mayor)</option>
+                                <option value="quantity-desc">Cantidad (Mayor a Menor)</option>
+                                <option value="code-asc">Código (A-Z)</option>
+                                <option value="code-desc">Código (Z-A)</option>
+                            </select>
+                        </div>
+
+                        <div class="filter-actions">
+                            <button type="button" class="btn btn-small btn-secondary" onclick="clearFilters()">
+                                Limpiar Filtros
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LISTA DE PRODUCTOS -->
+                <div id="productsList" class="products-grid">
+                    <div class="empty-state">
+                        <div style="font-size: 3rem;"></div>
+                        <h3>No hay productos</h3>
+                        <p>Agrega tu primer producto usando el formulario</p>
+                    </div>
+                </div>
+  <!-- MENSAJE CUANDO NO HAY RESULTADOS DE BÚSQUEDA -->
+                <!-- MENSAJE CUANDO NO HAY RESULTADOS DE BÚSQUEDA -->
+                <div id="noResultsMessage" class="no-results-state" style="display: none;">
+                    <div style="font-size: 3rem;"></div>
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta ajustar los filtros o términos de búsqueda</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/inventory.js"></script>
+</body>
+</html>
