@@ -1,0 +1,31 @@
+{
+  "name": "selenium-tests",
+  "version": "1.0.0",
+  "description": "Automated testing suite with Selenium for CRUD application - Task 4",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/main.test.js --timeout 40000 --reporter mochawesome --reporter-options reportDir=reports,reportFilename=selenium-report",
+    "test:report": "mocha tests/main.test.js --timeout 40000 --reporter mochawesome --reporter-options reportDir=reports,reportFilename=test-report",
+    "install-driver": "node -e \"const {Builder} = require('selenium-webdriver'); console.log('Selenium WebDriver instalado correctamente');\""
+  },
+  "keywords": [
+    "selenium",
+    "automation",
+    "testing",
+    "crud",
+    "mocha"
+  ],
+  "author": "Tu Nombre",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.15.0"
+  },
+  "devDependencies": {
+    "mochawesome": "^7.1.3"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

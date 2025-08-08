@@ -1,0 +1,461 @@
+{
+  "stats": {
+    "suites": 3,
+    "tests": 12,
+    "passes": 3,
+    "pending": 1,
+    "failures": 8,
+    "start": "2025-08-08T22:53:14.820Z",
+    "end": "2025-08-08T22:54:21.148Z",
+    "duration": 66328,
+    "testsRegistered": 12,
+    "passPercent": 27.27272727272727,
+    "pendingPercent": 8.333333333333332,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1bb7aac8-b91e-4955-9df7-ed49c9c27ba7",
+      "title": "",
+      "fullFile": "E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\tests\\main.test.js",
+      "file": "\\tests\\main.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c89987ad-9928-4860-9f32-b383412c0cd4",
+          "title": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS",
+          "fullFile": "E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\tests\\main.test.js",
+          "file": "\\tests\\main.test.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS\"",
+              "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS \"before all\" hook in \"TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS\"",
+              "timedOut": false,
+              "duration": 4810,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Usamos la instancia de tu driver.js\ndriver = await driverManager.createDriver();",
+              "err": {},
+              "uuid": "a824e72f-3344-4ce1-a8ee-11bd4434c85e",
+              "parentUUID": "c89987ad-9928-4860-9f32-b383412c0cd4",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS\"",
+              "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS \"after all\" hook in \"TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS\"",
+              "timedOut": false,
+              "duration": 567,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driverManager.quitDriver();",
+              "err": {},
+              "uuid": "57b1f8e4-20fc-4cf1-9d10-5be5449f7099",
+              "parentUUID": "c89987ad-9928-4860-9f32-b383412c0cd4",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "55591808-3702-47c4-a528-343b59ce58d6",
+              "title": "🔑 Suite de Autenticación",
+              "fullFile": "E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\tests\\main.test.js",
+              "file": "\\tests\\main.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before each\" hook in \"🔑 Suite de Autenticación\"",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación \"before each\" hook in \"🔑 Suite de Autenticación\"",
+                  "timedOut": false,
+                  "duration": 97,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "// Antes de cada prueba de login, vamos a la página\nawait driver.get(testData.urls.login);",
+                  "err": {},
+                  "uuid": "c8f60318-8716-49e5-b7d4-d9ce546522bb",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "✅ [Logout] Debe cerrar sesión para continuar con pruebas negativas",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ✅ [Logout] Debe cerrar sesión para continuar con pruebas negativas",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "pending",
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": true,
+                  "context": null,
+                  "code": "",
+                  "err": {},
+                  "uuid": "8b6d3ce2-e6ef-4a69-8c07-fef16a5036de",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "✅ [Logout] Debe cerrar sesión para continuar con pruebas negativas",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ✅ [Logout] Debe cerrar sesión para continuar con pruebas negativas",
+                  "timedOut": false,
+                  "duration": 10329,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const logoutButton = await driver.wait(until.elementLocated(By.css(testData.selectors.inventory.logoutButton)), testData.timeouts.medium);\nawait logoutButton.click();\nawait driver.wait(until.alertIsPresent(), testData.timeouts.short);\nawait driver.switchTo().alert().accept();\nawait driver.wait(until.urlIs(testData.urls.login), testData.timeouts.medium);",
+                  "err": {
+                    "message": "TimeoutError: Waiting for element to be located By(css selector, [onclick=\"authManager.logout()\"])\nWait timed out after 10328ms",
+                    "estack": "TimeoutError: Waiting for element to be located By(css selector, [onclick=\"authManager.logout()\"])\nWait timed out after 10328ms\n    at E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\node_modules\\selenium-webdriver\\lib\\webdriver.js:929:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+                    "diff": null
+                  },
+                  "uuid": "86a6e76e-6a3a-4cb5-b88d-4dce736b6cd0",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "❌ [Login - Negativo] Debe mostrar error para: Usuario o contraseña incorrectos",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ❌ [Login - Negativo] Debe mostrar error para: Usuario o contraseña incorrectos",
+                  "timedOut": false,
+                  "duration": 2891,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.findElement(By.css(testData.selectors.login.usernameInput)).sendKeys(user.username);\nawait driver.findElement(By.css(testData.selectors.login.passwordInput)).sendKeys(user.password);\nawait driver.findElement(By.css(testData.selectors.login.submitButton)).click();\nlet errorSelector;\nif (user.expectedError.includes('incorrectos')) errorSelector = testData.selectors.login.errorMessage;\nelse if (user.expectedError.includes('usuario')) errorSelector = testData.selectors.login.usernameError;\nelse errorSelector = testData.selectors.login.passwordError;\nconst errorElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(errorSelector))), testData.timeouts.short);\nconst errorText = await errorElement.getText();\nexpect(errorText).to.equal(user.expectedError);",
+                  "err": {
+                    "message": "TimeoutError: Waiting until element is visible\nWait timed out after 2123ms",
+                    "estack": "TimeoutError: Waiting until element is visible\nWait timed out after 2123ms\n    at E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\node_modules\\selenium-webdriver\\lib\\webdriver.js:929:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+                    "diff": null
+                  },
+                  "uuid": "3f41788d-ecc4-4064-8140-1dfd402c97c5",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "❌ [Login - Negativo] Debe mostrar error para: Usuario o contraseña incorrectos",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ❌ [Login - Negativo] Debe mostrar error para: Usuario o contraseña incorrectos",
+                  "timedOut": false,
+                  "duration": 600,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.findElement(By.css(testData.selectors.login.usernameInput)).sendKeys(user.username);\nawait driver.findElement(By.css(testData.selectors.login.passwordInput)).sendKeys(user.password);\nawait driver.findElement(By.css(testData.selectors.login.submitButton)).click();\nlet errorSelector;\nif (user.expectedError.includes('incorrectos')) errorSelector = testData.selectors.login.errorMessage;\nelse if (user.expectedError.includes('usuario')) errorSelector = testData.selectors.login.usernameError;\nelse errorSelector = testData.selectors.login.passwordError;\nconst errorElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(errorSelector))), testData.timeouts.short);\nconst errorText = await errorElement.getText();\nexpect(errorText).to.equal(user.expectedError);",
+                  "err": {},
+                  "uuid": "d5e928d0-04d5-4de8-a040-107b02f928a6",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "❌ [Login - Negativo] Debe mostrar error para: El usuario es obligatorio",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ❌ [Login - Negativo] Debe mostrar error para: El usuario es obligatorio",
+                  "timedOut": false,
+                  "duration": 2632,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.findElement(By.css(testData.selectors.login.usernameInput)).sendKeys(user.username);\nawait driver.findElement(By.css(testData.selectors.login.passwordInput)).sendKeys(user.password);\nawait driver.findElement(By.css(testData.selectors.login.submitButton)).click();\nlet errorSelector;\nif (user.expectedError.includes('incorrectos')) errorSelector = testData.selectors.login.errorMessage;\nelse if (user.expectedError.includes('usuario')) errorSelector = testData.selectors.login.usernameError;\nelse errorSelector = testData.selectors.login.passwordError;\nconst errorElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(errorSelector))), testData.timeouts.short);\nconst errorText = await errorElement.getText();\nexpect(errorText).to.equal(user.expectedError);",
+                  "err": {
+                    "message": "TimeoutError: Waiting until element is visible\nWait timed out after 2198ms",
+                    "estack": "TimeoutError: Waiting until element is visible\nWait timed out after 2198ms\n    at E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\node_modules\\selenium-webdriver\\lib\\webdriver.js:929:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+                    "diff": null
+                  },
+                  "uuid": "c222c0c8-83b5-4ed3-8151-179f60d25961",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "❌ [Login - Negativo] Debe mostrar error para: La contraseña es obligatoria",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ❌ [Login - Negativo] Debe mostrar error para: La contraseña es obligatoria",
+                  "timedOut": false,
+                  "duration": 2591,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.findElement(By.css(testData.selectors.login.usernameInput)).sendKeys(user.username);\nawait driver.findElement(By.css(testData.selectors.login.passwordInput)).sendKeys(user.password);\nawait driver.findElement(By.css(testData.selectors.login.submitButton)).click();\nlet errorSelector;\nif (user.expectedError.includes('incorrectos')) errorSelector = testData.selectors.login.errorMessage;\nelse if (user.expectedError.includes('usuario')) errorSelector = testData.selectors.login.usernameError;\nelse errorSelector = testData.selectors.login.passwordError;\nconst errorElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(errorSelector))), testData.timeouts.short);\nconst errorText = await errorElement.getText();\nexpect(errorText).to.equal(user.expectedError);",
+                  "err": {
+                    "message": "TimeoutError: Waiting until element is visible\nWait timed out after 2088ms",
+                    "estack": "TimeoutError: Waiting until element is visible\nWait timed out after 2088ms\n    at E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\node_modules\\selenium-webdriver\\lib\\webdriver.js:929:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+                    "diff": null
+                  },
+                  "uuid": "d16ba742-96fd-497a-bec5-d5b86e9a0703",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "❌ [Login - Negativo] Debe mostrar error para: El usuario debe tener al menos 3 caracteres",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ❌ [Login - Negativo] Debe mostrar error para: El usuario debe tener al menos 3 caracteres",
+                  "timedOut": false,
+                  "duration": 678,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.findElement(By.css(testData.selectors.login.usernameInput)).sendKeys(user.username);\nawait driver.findElement(By.css(testData.selectors.login.passwordInput)).sendKeys(user.password);\nawait driver.findElement(By.css(testData.selectors.login.submitButton)).click();\nlet errorSelector;\nif (user.expectedError.includes('incorrectos')) errorSelector = testData.selectors.login.errorMessage;\nelse if (user.expectedError.includes('usuario')) errorSelector = testData.selectors.login.usernameError;\nelse errorSelector = testData.selectors.login.passwordError;\nconst errorElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(errorSelector))), testData.timeouts.short);\nconst errorText = await errorElement.getText();\nexpect(errorText).to.equal(user.expectedError);",
+                  "err": {},
+                  "uuid": "9a88e4ef-cf26-4df1-8469-151e87718414",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "❌ [Login - Negativo] Debe mostrar error para: La contraseña debe tener al menos 6 caracteres",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 🔑 Suite de Autenticación ❌ [Login - Negativo] Debe mostrar error para: La contraseña debe tener al menos 6 caracteres",
+                  "timedOut": false,
+                  "duration": 583,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.findElement(By.css(testData.selectors.login.usernameInput)).sendKeys(user.username);\nawait driver.findElement(By.css(testData.selectors.login.passwordInput)).sendKeys(user.password);\nawait driver.findElement(By.css(testData.selectors.login.submitButton)).click();\nlet errorSelector;\nif (user.expectedError.includes('incorrectos')) errorSelector = testData.selectors.login.errorMessage;\nelse if (user.expectedError.includes('usuario')) errorSelector = testData.selectors.login.usernameError;\nelse errorSelector = testData.selectors.login.passwordError;\nconst errorElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(errorSelector))), testData.timeouts.short);\nconst errorText = await errorElement.getText();\nexpect(errorText).to.equal(user.expectedError);",
+                  "err": {},
+                  "uuid": "5494ae87-5e70-467d-b067-8d21fe5939d7",
+                  "parentUUID": "55591808-3702-47c4-a528-343b59ce58d6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "d5e928d0-04d5-4de8-a040-107b02f928a6",
+                "9a88e4ef-cf26-4df1-8469-151e87718414",
+                "5494ae87-5e70-467d-b067-8d21fe5939d7"
+              ],
+              "failures": [
+                "86a6e76e-6a3a-4cb5-b88d-4dce736b6cd0",
+                "3f41788d-ecc4-4064-8140-1dfd402c97c5",
+                "c222c0c8-83b5-4ed3-8151-179f60d25961",
+                "d16ba742-96fd-497a-bec5-d5b86e9a0703"
+              ],
+              "pending": [
+                "8b6d3ce2-e6ef-4a69-8c07-fef16a5036de"
+              ],
+              "skipped": [],
+              "duration": 20304,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 40000
+            },
+            {
+              "uuid": "034b3c4c-21a5-45bb-84cc-0952cf52741a",
+              "title": "📋 Suite de Inventario (CRUD)",
+              "fullFile": "E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\tests\\main.test.js",
+              "file": "\\tests\\main.test.js",
+              "beforeHooks": [
+                {
+                  "title": "\"before all\" hook in \"📋 Suite de Inventario (CRUD)\"",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 📋 Suite de Inventario (CRUD) \"before all\" hook in \"📋 Suite de Inventario (CRUD)\"",
+                  "timedOut": false,
+                  "duration": 2606,
+                  "state": null,
+                  "speed": null,
+                  "pass": false,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.get(testData.urls.login);\nawait driver.findElement(By.css(testData.selectors.login.usernameInput)).sendKeys(testData.validUsers[0].username);\nawait driver.findElement(By.css(testData.selectors.login.passwordInput)).sendKeys(testData.validUsers[0].password);\nawait driver.findElement(By.css(testData.selectors.login.submitButton)).click();\nawait driver.wait(until.urlIs(testData.urls.dashboard), testData.timeouts.medium);",
+                  "err": {},
+                  "uuid": "44e6d56c-90f6-4745-ac3a-4b9d6f8a1ed3",
+                  "parentUUID": "034b3c4c-21a5-45bb-84cc-0952cf52741a",
+                  "isHook": true,
+                  "skipped": false
+                }
+              ],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "✅ [CREATE] Debe crear un nuevo producto correctamente",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 📋 Suite de Inventario (CRUD) ✅ [CREATE] Debe crear un nuevo producto correctamente",
+                  "timedOut": false,
+                  "duration": 6081,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "await driver.findElement(By.css(testData.selectors.inventory.codigoInput)).sendKeys(product.codigo);\nawait driver.findElement(By.css(testData.selectors.inventory.nombreInput)).sendKeys(product.nombre);    \nawait driver.findElement(By.css(testData.selectors.inventory.categoriaSelect)).sendKeys(product.categoria);\nawait driver.findElement(By.css(testData.selectors.inventory.submitButton)).click();\nconst msgElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(testData.selectors.inventory.generalMessage))), testData.timeouts.medium);\nconst msgText = await msgElement.getText();\nexpect(msgText).to.include(testData.expectedMessages.inventory.productAdded);",
+                  "err": {
+                    "message": "TimeoutError: Waiting until element is visible\nWait timed out after 5120ms",
+                    "estack": "TimeoutError: Waiting until element is visible\nWait timed out after 5120ms\n    at E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\node_modules\\selenium-webdriver\\lib\\webdriver.js:929:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+                    "diff": null
+                  },
+                  "uuid": "80c972f1-ec90-487b-8027-657ba1a7544b",
+                  "parentUUID": "034b3c4c-21a5-45bb-84cc-0952cf52741a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "✅ [READ] Debe encontrar el producto recién creado en la lista",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 📋 Suite de Inventario (CRUD) ✅ [READ] Debe encontrar el producto recién creado en la lista",
+                  "timedOut": false,
+                  "duration": 10057,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const cardSelector = By.xpath(`//div[contains(@class, 'product-card')][.//span[contains(text(), '${product.codigo}')]]`);\nconst productCard = await driver.wait(until.elementLocated(cardSelector), testData.timeouts.medium);    \nexpect(productCard).to.exist;",
+                  "err": {
+                    "message": "TimeoutError: Waiting for element to be located By(xpath, //div[contains(@class, 'product-card')][.//span[contains(text(), 'TEST001')]])\nWait timed out after 10056ms",
+                    "estack": "TimeoutError: Waiting for element to be located By(xpath, //div[contains(@class, 'product-card')][.//span[contains(text(), 'TEST001')]])\nWait timed out after 10056ms\n    at E:\\Clases\\Nuevo trimestre\\Programacion 3\\Tareas\\selenium-tests\\node_modules\\selenium-webdriver\\lib\\webdriver.js:929:22\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+                    "diff": null
+                  },
+                  "uuid": "1685f7c9-51f3-40ef-9382-6aee12937ace",
+                  "parentUUID": "034b3c4c-21a5-45bb-84cc-0952cf52741a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "✅ [UPDATE] Debe editar el producto existente correctamente",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 📋 Suite de Inventario (CRUD) ✅ [UPDATE] Debe editar el producto existente correctamente",
+                  "timedOut": false,
+                  "duration": 10053,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const cardSelector = By.xpath(`//div[contains(@class, 'product-card')][.//span[contains(text(), '${product.codigo}')]]`);\nconst productCard = await driver.findElement(cardSelector);\nawait productCard.findElement(By.css(testData.selectors.inventory.editButton)).click();\nawait driver.wait(until.elementTextContains(driver.findElement(By.css(testData.selectors.inventory.submitButton)), 'Actualizar'), testData.timeouts.short);\nconst nameInput = await driver.findElement(By.css(testData.selectors.inventory.nombreInput));\nawait nameInput.sendKeys(Key.chord(Key.CONTROL, \"a\"), Key.DELETE);\nawait nameInput.sendKeys(updatedProduct.nombre);\nawait driver.findElement(By.css(testData.selectors.inventory.submitButton)).click();\nconst msgElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(testData.selectors.inventory.generalMessage))), testData.timeouts.medium);\nconst msgText = await msgElement.getText();\nexpect(msgText).to.include(testData.expectedMessages.inventory.productUpdated);",
+                  "err": {
+                    "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[contains(@class, 'product-card')][.//span[contains(text(), 'TEST001')]]\"}\n  (Session info: chrome=139.0.7258.67)",
+                    "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[contains(@class, 'product-card')][.//span[contains(text(), 'TEST001')]]\"}\n  (Session info: chrome=139.0.7258.67)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:523:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:524:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:456:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async Context.<anonymous> (tests\\main.test.js:101:33)",
+                    "diff": null
+                  },
+                  "uuid": "e22b3dee-1842-4bf8-b202-1266ae862d8f",
+                  "parentUUID": "034b3c4c-21a5-45bb-84cc-0952cf52741a",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "✅ [DELETE] Debe eliminar el producto actualizado correctamente",
+                  "fullTitle": "TAREA 4: SUITE COMPLETA DE PRUEBAS AUTOMATIZADAS 📋 Suite de Inventario (CRUD) ✅ [DELETE] Debe eliminar el producto actualizado correctamente",
+                  "timedOut": false,
+                  "duration": 10034,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const cardSelector = By.xpath(`//div[contains(@class, 'product-card')][.//h3[contains(text(), '${updatedProduct.nombre}')]]`);\nconst productCard = await driver.findElement(cardSelector);\nawait productCard.findElement(By.css(testData.selectors.inventory.deleteButton)).click();\nawait driver.wait(until.alertIsPresent(), testData.timeouts.short);\nawait driver.switchTo().alert().accept();\nconst msgElement = await driver.wait(until.elementIsVisible(driver.findElement(By.css(testData.selectors.inventory.generalMessage))), testData.timeouts.medium);\nconst msgText = await msgElement.getText();\nexpect(msgText).to.include(testData.expectedMessages.inventory.productDeleted);\nconst elements = await driver.findElements(cardSelector);\nexpect(elements.length).to.equal(0);",
+                  "err": {
+                    "message": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[contains(@class, 'product-card')][.//h3[contains(text(), 'Producto Actualizado')]]\"}\n  (Session info: chrome=139.0.7258.67)",
+                    "estack": "NoSuchElementError: no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[contains(@class, 'product-card')][.//h3[contains(text(), 'Producto Actualizado')]]\"}\n  (Session info: chrome=139.0.7258.67)\n    at Object.throwDecodedError (node_modules\\selenium-webdriver\\lib\\error.js:523:15)\n    at parseHttpResponse (node_modules\\selenium-webdriver\\lib\\http.js:524:13)\n    at Executor.execute (node_modules\\selenium-webdriver\\lib\\http.js:456:28)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Driver.execute (node_modules\\selenium-webdriver\\lib\\webdriver.js:745:17)\n    at async Context.<anonymous> (tests\\main.test.js:118:33)",
+                    "diff": null
+                  },
+                  "uuid": "1f57c4a7-659c-4858-87cf-c336d38a72ab",
+                  "parentUUID": "034b3c4c-21a5-45bb-84cc-0952cf52741a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "80c972f1-ec90-487b-8027-657ba1a7544b",
+                "1685f7c9-51f3-40ef-9382-6aee12937ace",
+                "e22b3dee-1842-4bf8-b202-1266ae862d8f",
+                "1f57c4a7-659c-4858-87cf-c336d38a72ab"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 36225,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 40000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 40000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 40000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.8.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "selenium-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "selenium-report"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
